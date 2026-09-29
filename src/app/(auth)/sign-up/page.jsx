@@ -11,7 +11,6 @@ import {
   TextField,
 } from "@heroui/react";
 import { signUp } from "@/lib/auth-client";
-import { error } from "better-auth/api";
 // import { object } from 'better-auth';
 
 const SignInPage =  () => {
@@ -20,9 +19,7 @@ const SignInPage =  () => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData.entries());
-    // Convert FormData to plain object
-
-    // alert(`Form submitted with: ${JSON.stringify(data, null, 2)}`);
+    
     console.log('submit data',data)
 
     const { data:resData,error } = await signUp.email({
